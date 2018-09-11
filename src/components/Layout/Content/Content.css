@@ -1,0 +1,8 @@
+.body-content{
+    top: 50px;
+    left: 300px;
+    position: absolute;
+    background-color: aliceblue;
+    width: 100%;
+    min-height: calc(100vh - 50px);
+}
