@@ -16,7 +16,7 @@ class LoginContainer extends Component {
         
         setTimeout(function(){
             this.props.childProps.userHasAuthenticated(true);
-            this.props.history.push('dashboard')
+            this.props.history.push('dashboard/inicio')
         }.bind(this),500);
         
     }

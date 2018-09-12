@@ -3,6 +3,6 @@
     left: 300px;
     position: absolute;
     background-color: aliceblue;
-    width: 100%;
+    width: calc(100% - 300px);
     min-height: calc(100vh - 50px);
 }

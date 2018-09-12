@@ -3,4 +3,34 @@
     height: 50px;
     background-color: aquamarine;
     position: fixed;
+    z-index: 9999;
+}
+.desplegable .btn-toolbar{
+    position: absolute;
+    right: 0;
+    width: 180px;
+    height: 50px;
+}
+.desplegable .btn-group.open .dropdown-toggle{
+    box-shadow: none;
+}
+.desplegable .dropdown-menu{
+    top:50px;
+}
+#dropdown-no-caret{
+    padding: 0 4px;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    position: absolute;
+}
+#dropdown-no-caret:active{
+    box-shadow: none;
+}
+#dropdown-no-caret img{
+    margin-left: 10px;
+    width: 30px;
+}
+#dropdown-no-caret h5{
+    margin-top: 10px;
 }
