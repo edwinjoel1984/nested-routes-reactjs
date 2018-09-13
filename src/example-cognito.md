@@ -26,3 +26,7 @@ aws cognito-idp sign-up \
   aws s3 sync build/ s3://notes-app-client-2018 --delete
   aws cloudfront create-invalidation --distribution-id EBN4SZ43ACFE3 --paths "/*"
   aws cloudfront create-invalidation --distribution-id YOUR_WWW_CF_DISTRIBUTION_ID --paths "/*"
+
+  "predeploy": "npm run build",
+    "deploy": "aws s3 sync build/ s3://notes-app-client-2018 --delete",
+    "postdeploy": "aws cloudfront create-invalidation --distribution-id EBN4SZ43ACFE3 --paths '/*'",
