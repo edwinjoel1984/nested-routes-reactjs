@@ -18,14 +18,16 @@ class Sidebar extends Component {
             this.state.menus.map((menu)=>{
                 let rootParent = (menu.parent)?'':'dashboard/';
                 return(
-                    <li key={menu.id}>
+                    <li key={menu.id} className="item">
                         <NavLink key={menu.id} to={`/${rootParent}${menu.id}`} activeClassName="active">{menu.name}</NavLink>
                     </li>
                 )
                 
             }))
     }
+    
     render() {
+        // console.info('todos', this.props)
         return (
             <div className="sidebar">
                 <div className="profile">

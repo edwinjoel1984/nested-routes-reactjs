@@ -1,0 +1,19 @@
+.content-cards{
+    width: 1080px;
+    margin: 0 auto;
+}
+
+
+.card-element .content-card{
+    width: 323px;
+    border: 1px solid red;
+    display: inline-block;
+    /* padding: 10px; */
+    height: 350px;
+    margin-bottom: 10px;
+    /* margin: 20px; */
+}
+.card-element .content-card .background-survey{
+    height: 170px;
+    background: rebeccapurple;
+}

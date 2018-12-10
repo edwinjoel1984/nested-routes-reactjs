@@ -3,7 +3,14 @@ import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
 import LoaderButton from './LoaderButton/LoaderButton'
 
-export default class Login extends Component {
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux';
+import {login, verifyUser} from '../actions/session.actions'
+
+
+
+
+class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -13,7 +20,9 @@ export default class Login extends Component {
       password: ""
     };
   }
-
+  componentWillMount(){
+    this.props.verifyUser(true);
+  }
   validateForm() {
     return this.state.email.length > 0 && this.state.password.length > 0;
   }
@@ -26,11 +35,19 @@ export default class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.submit(event,this.state);
-    this.props.setLoading(true);
+    this.props.login(this.state)
+    // this.props.setLoading(true);
+  }
+  componentWillReceiveProps(nextProps,oldProps){
+    console.info("REDIRIGIANDO DESDE EL LOGIN",nextProps);
+    if(nextProps.currentUser.id){
+      this.props.history.push('dashboard/inicio');
+    }
   }
 
   render() {
+    // console.clear()
+    // console.info(this.props)
     return (
       <div className="Login">
         <form onSubmit={this.handleSubmit}>
@@ -65,3 +82,15 @@ export default class Login extends Component {
     );
   }
 }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    login : bindActionCreators(login,dispatch),
+    verifyUser: bindActionCreators(verifyUser,dispatch)
+  }
+}
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Login);

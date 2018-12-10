@@ -1,10 +1,10 @@
 import React from 'react'
-import {ButtonToolbar,DropdownButton, MenuItem, Dropdown} from 'react-bootstrap';
+import {ButtonToolbar,DropdownButton, MenuItem} from 'react-bootstrap';
 import './NavBar.css';
 
 const NavBar = (props) => {
-    console.error(props.props);
-    const menu=<h5>Username...<img style={{borderRadius:"50%"}} src={'https://avatars3.githubusercontent.com/u/16127460?s=40&v=4'}/></h5>
+    // console.log("PROPS",props);
+    const menu=props.currentUser.id?<h5>{`${props.currentUser.attributes.full_name}...`}<img style={{borderRadius:"50%"}} alt={"test"} src={'https://avatars3.githubusercontent.com/u/16127460?s=40&v=4'}/></h5>:''
     return(
         <div className="navbar">
             <div className="desplegable">

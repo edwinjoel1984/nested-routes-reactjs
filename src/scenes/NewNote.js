@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormGroup, FormControl, ControlLabel, Alert, Button } from "react-bootstrap";
+import { FormGroup, FormControl, ControlLabel} from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton/LoaderButton";
 import config from "../config";
 import "./NewNote.css";

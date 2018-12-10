@@ -13,7 +13,6 @@ class LoginContainer extends Component {
     }
     onSubmit(event,data){
         event.preventDefault();
-        
         setTimeout(function(){
             this.props.childProps.userHasAuthenticated(true);
             this.props.history.push('dashboard/inicio')
@@ -30,7 +29,7 @@ class LoginContainer extends Component {
         console.info("----->",this.props)
         return (
             <div className="login">
-                <Login submit={this.onSubmit.bind(this)} setLoading={this.setLoading.bind(this)} parentState={this.state} />
+                <Login submit={this.onSubmit.bind(this)} setLoading={this.setLoading.bind(this)} parentState={this.state} {...this.props}/>
             </div>
         );
     }

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import AppliedRoute from '../../../config/AppliedRoute'
 
 import NewNote from '../../../scenes/NewNote'
+import ReduxComponent from '../../ReduxComponent'
+import SegmentList from '../../SegmentList'
 
 import './Content.css'
 
@@ -11,13 +13,11 @@ class Content extends Component {
         this.state = {  };
     }
     render() {
-        const testContainer = () => <h1>Test Users</h1>
-        const testContainer2 = () => <h1>Test Empresa</h1>
-        console.info(this.props)
+        // console.info(this.props)
         return (
             <div className="body-content">
-                <AppliedRoute  path="/dashboard/users" component={testContainer}  props={this.props}/>
-                <AppliedRoute  path="/dashboard/company" component={testContainer2} props={this.props}/>
+                <AppliedRoute  path="/dashboard/users" component={ReduxComponent}  props={this.props}/>
+                <AppliedRoute  path="/dashboard/company" component={SegmentList} props={this.props}/>
                 <AppliedRoute exact path="/dashboard/inicio" component={NewNote} props={this.props}/>
             </div>
         );
